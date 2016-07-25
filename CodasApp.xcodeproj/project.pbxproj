@@ -17,7 +17,6 @@
 		D06B36AD1D45980200A5685B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B36AC1D45980200A5685B /* ViewController.swift */; };
 		D06B36AF1D45980900A5685B /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B36AE1D45980900A5685B /* FrontViewController.swift */; };
 		D06B36B11D45981000A5685B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B36B01D45981000A5685B /* FirstViewController.swift */; };
-		D06B866D412AF5A9C04E8031 /* libPods-IPMQuickstart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F2A331A544AAD2B9424D80 /* libPods-IPMQuickstart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		8B2B3F851C18DBB800DB93A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2B3F8C1C18EDBB00DB93A5 /* IPMQuickstart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPMQuickstart-Bridging-Header.h"; sourceTree = "<group>"; };
 		8B2B3F8D1C18FC2E00DB93A5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		B8F2A331A544AAD2B9424D80 /* libPods-IPMQuickstart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IPMQuickstart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DAE7CE88CA5597349D5584 /* Pods-IPMQuickstart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPMQuickstart.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPMQuickstart/Pods-IPMQuickstart.release.xcconfig"; sourceTree = "<group>"; };
 		D06B36A41D45948700A5685B /* CodasLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CodasLogo.jpg; path = ../../CodasLogo.jpg; sourceTree = "<group>"; };
 		D06B36A61D45949400A5685B /* CodasBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CodasBackground.jpg; path = ../../CodasBackground.jpg; sourceTree = "<group>"; };
@@ -44,7 +42,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D06B866D412AF5A9C04E8031 /* libPods-IPMQuickstart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +60,6 @@
 		6740510037E524CFB4FBA213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B8F2A331A544AAD2B9424D80 /* libPods-IPMQuickstart.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
