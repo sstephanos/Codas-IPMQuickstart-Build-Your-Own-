@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8B2B3F7A1C18DBB800DB93A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B3F791C18DBB800DB93A5 /* AppDelegate.swift */; };
-		8B2B3F7C1C18DBB800DB93A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B3F7B1C18DBB800DB93A5 /* ViewController.swift */; };
 		8B2B3F7F1C18DBB800DB93A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B3F7D1C18DBB800DB93A5 /* Main.storyboard */; };
 		8B2B3F811C18DBB800DB93A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B3F801C18DBB800DB93A5 /* Assets.xcassets */; };
 		8B2B3F841C18DBB800DB93A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B3F821C18DBB800DB93A5 /* LaunchScreen.storyboard */; };
 		8B2B3F8E1C18FC2E00DB93A5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B3F8D1C18FC2E00DB93A5 /* SwiftyJSON.swift */; };
+		D06B36A51D45948700A5685B /* CodasLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06B36A41D45948700A5685B /* CodasLogo.jpg */; };
+		D06B36A71D45949400A5685B /* CodasBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06B36A61D45949400A5685B /* CodasBackground.jpg */; };
+		D06B36AD1D45980200A5685B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B36AC1D45980200A5685B /* ViewController.swift */; };
+		D06B36AF1D45980900A5685B /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B36AE1D45980900A5685B /* FrontViewController.swift */; };
+		D06B36B11D45981000A5685B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B36B01D45981000A5685B /* FirstViewController.swift */; };
 		D06B866D412AF5A9C04E8031 /* libPods-IPMQuickstart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F2A331A544AAD2B9424D80 /* libPods-IPMQuickstart.a */; };
 /* End PBXBuildFile section */
 
@@ -20,7 +24,6 @@
 		568D6FB3DCA430D2ADC5F5C0 /* Pods-IPMQuickstart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPMQuickstart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IPMQuickstart/Pods-IPMQuickstart.debug.xcconfig"; sourceTree = "<group>"; };
 		8B2B3F761C18DBB800DB93A5 /* IPMQuickstart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPMQuickstart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2B3F791C18DBB800DB93A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B2B3F7B1C18DBB800DB93A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B2B3F7E1C18DBB800DB93A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B2B3F801C18DBB800DB93A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2B3F831C18DBB800DB93A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,6 +32,11 @@
 		8B2B3F8D1C18FC2E00DB93A5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B8F2A331A544AAD2B9424D80 /* libPods-IPMQuickstart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IPMQuickstart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DAE7CE88CA5597349D5584 /* Pods-IPMQuickstart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPMQuickstart.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPMQuickstart/Pods-IPMQuickstart.release.xcconfig"; sourceTree = "<group>"; };
+		D06B36A41D45948700A5685B /* CodasLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CodasLogo.jpg; path = ../../CodasLogo.jpg; sourceTree = "<group>"; };
+		D06B36A61D45949400A5685B /* CodasBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CodasBackground.jpg; path = ../../CodasBackground.jpg; sourceTree = "<group>"; };
+		D06B36AC1D45980200A5685B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D06B36AE1D45980900A5685B /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
+		D06B36B01D45981000A5685B /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +89,16 @@
 		8B2B3F781C18DBB800DB93A5 /* IPMQuickstart */ = {
 			isa = PBXGroup;
 			children = (
+				D06B36B01D45981000A5685B /* FirstViewController.swift */,
+				D06B36AE1D45980900A5685B /* FrontViewController.swift */,
+				D06B36AC1D45980200A5685B /* ViewController.swift */,
 				8B2B3F8C1C18EDBB00DB93A5 /* IPMQuickstart-Bridging-Header.h */,
 				8B2B3F851C18DBB800DB93A5 /* Info.plist */,
 				8B2B3F791C18DBB800DB93A5 /* AppDelegate.swift */,
 				8B2B3F8D1C18FC2E00DB93A5 /* SwiftyJSON.swift */,
-				8B2B3F7B1C18DBB800DB93A5 /* ViewController.swift */,
 				8B2B3F801C18DBB800DB93A5 /* Assets.xcassets */,
+				D06B36A61D45949400A5685B /* CodasBackground.jpg */,
+				D06B36A41D45948700A5685B /* CodasLogo.jpg */,
 				8B2B3F821C18DBB800DB93A5 /* LaunchScreen.storyboard */,
 				8B2B3F7D1C18DBB800DB93A5 /* Main.storyboard */,
 			);
@@ -131,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8B2B3F711C18DBB800DB93A5 /* Build configuration list for PBXProject "IPMQuickstart" */;
+			buildConfigurationList = 8B2B3F711C18DBB800DB93A5 /* Build configuration list for PBXProject "CodasApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -154,9 +166,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06B36A71D45949400A5685B /* CodasBackground.jpg in Resources */,
 				8B2B3F841C18DBB800DB93A5 /* LaunchScreen.storyboard in Resources */,
 				8B2B3F811C18DBB800DB93A5 /* Assets.xcassets in Resources */,
 				8B2B3F7F1C18DBB800DB93A5 /* Main.storyboard in Resources */,
+				D06B36A51D45948700A5685B /* CodasLogo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06B36B11D45981000A5685B /* FirstViewController.swift in Sources */,
+				D06B36AF1D45980900A5685B /* FrontViewController.swift in Sources */,
+				D06B36AD1D45980200A5685B /* ViewController.swift in Sources */,
 				8B2B3F8E1C18FC2E00DB93A5 /* SwiftyJSON.swift in Sources */,
-				8B2B3F7C1C18DBB800DB93A5 /* ViewController.swift in Sources */,
 				8B2B3F7A1C18DBB800DB93A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +373,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B2B3F711C18DBB800DB93A5 /* Build configuration list for PBXProject "IPMQuickstart" */ = {
+		8B2B3F711C18DBB800DB93A5 /* Build configuration list for PBXProject "CodasApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B2B3F861C18DBB800DB93A5 /* Debug */,
