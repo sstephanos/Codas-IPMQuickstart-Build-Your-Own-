@@ -17,7 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="say anything..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ndw-jh-afv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CodasBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3Bx-2h-lOm">
+                                <rect key="frame" x="-1" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="click away..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ndw-jh-afv">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
@@ -27,9 +30,13 @@
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tim-AI-UpU">
-                                <rect key="frame" x="0.0" y="102" width="600" height="440"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CodasLogo.jpg" id="dBl-sY-vFs">
+                                    <rect key="frame" x="0.0" y="74" width="600" height="470"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MessageCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" textLabel="Xgy-Bq-ZCe" detailTextLabel="ZWe-2Z-Jys" rowHeight="46" style="IBUITableViewCellStyleSubtitle" id="PYf-0h-AbY">
                                         <rect key="frame" x="0.0" y="28" width="600" height="46"/>
@@ -68,10 +75,14 @@
                             <constraint firstItem="Tim-AI-UpU" firstAttribute="leading" secondItem="dJg-cO-Lvi" secondAttribute="leadingMargin" constant="-20" id="1xb-hj-ppJ"/>
                             <constraint firstItem="Tim-AI-UpU" firstAttribute="top" secondItem="zsA-lj-Hj5" secondAttribute="bottom" constant="8" id="2ED-ER-Re7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tim-AI-UpU" secondAttribute="trailing" constant="-20" id="76i-9w-yaA"/>
+                            <constraint firstItem="h9v-Ae-cmF" firstAttribute="top" secondItem="3Bx-2h-lOm" secondAttribute="bottom" id="DpC-vv-9l0"/>
+                            <constraint firstItem="3Bx-2h-lOm" firstAttribute="top" secondItem="dJg-cO-Lvi" secondAttribute="topMargin" id="HOB-md-KDL"/>
                             <constraint firstItem="Ndw-jh-afv" firstAttribute="top" secondItem="Tim-AI-UpU" secondAttribute="bottom" constant="8" id="IL7-Nl-k4a"/>
                             <constraint firstItem="Ndw-jh-afv" firstAttribute="trailing" secondItem="dJg-cO-Lvi" secondAttribute="trailingMargin" id="Tko-1X-wB7"/>
                             <constraint firstItem="Ndw-jh-afv" firstAttribute="leading" secondItem="dJg-cO-Lvi" secondAttribute="leadingMargin" id="UBa-Lp-2QJ"/>
                             <constraint firstItem="h9v-Ae-cmF" firstAttribute="top" secondItem="Ndw-jh-afv" secondAttribute="bottom" constant="20" id="cft-Lz-Qj8"/>
+                            <constraint firstItem="3Bx-2h-lOm" firstAttribute="leading" secondItem="dJg-cO-Lvi" secondAttribute="leadingMargin" constant="-21" id="oeM-nP-ON0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Bx-2h-lOm" secondAttribute="trailing" constant="-19" id="onk-qP-ILK"/>
                             <constraint firstItem="h9v-Ae-cmF" firstAttribute="top" secondItem="Ndw-jh-afv" secondAttribute="bottom" constant="20" id="pgP-Rk-vrF"/>
                         </constraints>
                         <variation key="default">

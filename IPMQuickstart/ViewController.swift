@@ -14,6 +14,10 @@ class ViewController: UIViewController {
   var generalChannel: TWMChannel? = nil
   var identity = ""
   var messages: [TWMMessage] = []
+  // label: UILabel!
+  var data = ""
+  //identity.text = data
+    
   
   // MARK: UI controls
   @IBOutlet weak var bottomConstraint: NSLayoutConstraint!

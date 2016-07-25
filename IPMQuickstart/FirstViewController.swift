@@ -21,4 +21,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         nameTextField.resignFirstResponder()
         return true
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        view.endEditing(true)
+        let dvc = segue.destinationViewController as! ViewController
+        dvc.data = nameTextField.text!
+    }
+
 }
