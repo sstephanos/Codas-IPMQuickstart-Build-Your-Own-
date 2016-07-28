@@ -68,6 +68,12 @@
                                     <outlet property="delegate" destination="xTc-Ig-d2F" id="s8y-CC-EGF"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYr-pl-IJL">
+                                <rect key="frame" x="165" y="29" width="250" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -75,9 +81,11 @@
                             <constraint firstItem="Tim-AI-UpU" firstAttribute="leading" secondItem="dJg-cO-Lvi" secondAttribute="leadingMargin" constant="-20" id="1xb-hj-ppJ"/>
                             <constraint firstItem="Tim-AI-UpU" firstAttribute="top" secondItem="zsA-lj-Hj5" secondAttribute="bottom" constant="8" id="2ED-ER-Re7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tim-AI-UpU" secondAttribute="trailing" constant="-20" id="76i-9w-yaA"/>
+                            <constraint firstItem="eYr-pl-IJL" firstAttribute="centerY" secondItem="dJg-cO-Lvi" secondAttribute="centerY" constant="-211.5" id="9Oz-QK-Ewg"/>
                             <constraint firstItem="h9v-Ae-cmF" firstAttribute="top" secondItem="3Bx-2h-lOm" secondAttribute="bottom" id="DpC-vv-9l0"/>
                             <constraint firstItem="3Bx-2h-lOm" firstAttribute="top" secondItem="dJg-cO-Lvi" secondAttribute="topMargin" id="HOB-md-KDL"/>
                             <constraint firstItem="Ndw-jh-afv" firstAttribute="top" secondItem="Tim-AI-UpU" secondAttribute="bottom" constant="8" id="IL7-Nl-k4a"/>
+                            <constraint firstItem="eYr-pl-IJL" firstAttribute="centerX" secondItem="dJg-cO-Lvi" secondAttribute="centerX" id="PUS-cM-oiU"/>
                             <constraint firstItem="Ndw-jh-afv" firstAttribute="trailing" secondItem="dJg-cO-Lvi" secondAttribute="trailingMargin" id="Tko-1X-wB7"/>
                             <constraint firstItem="Ndw-jh-afv" firstAttribute="leading" secondItem="dJg-cO-Lvi" secondAttribute="leadingMargin" id="UBa-Lp-2QJ"/>
                             <constraint firstItem="h9v-Ae-cmF" firstAttribute="top" secondItem="Ndw-jh-afv" secondAttribute="bottom" constant="20" id="cft-Lz-Qj8"/>
@@ -97,6 +105,7 @@
                     <navigationItem key="navigationItem" title="#general" prompt="Logging in..." id="yBR-jr-w55"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="pgP-Rk-vrF" id="A8L-0c-cdn"/>
+                        <outlet property="nameLabel" destination="eYr-pl-IJL" id="6X4-yt-33p"/>
                         <outlet property="tableView" destination="Tim-AI-UpU" id="4Wk-oY-sie"/>
                         <outlet property="textField" destination="Ndw-jh-afv" id="BbV-Hy-LRc"/>
                     </connections>
@@ -187,8 +196,8 @@
                                     <segue destination="xTc-Ig-d2F" kind="show" id="dTT-5h-7J7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What name do you want other users to see?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvR-ge-Csr">
-                                <rect key="frame" x="132" y="229" width="336" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What's your name?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvR-ge-Csr">
+                                <rect key="frame" x="227" y="227" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
