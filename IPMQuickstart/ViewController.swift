@@ -53,7 +53,34 @@ class ViewController: UIViewController {
         "x" : "|",
         "y" : "}",
         "z" : "{",
-        " " : ":"
+        " " : ":",
+        "," : ".",
+    "A" : "a",
+    "B" : "b",
+    "C" : "c",
+    "D" : "d",
+    "E" : "e",
+    "F" : "f",
+    "G" : "g",
+    "H" : "h",
+    "I" : "i",
+    "J" : "j",
+    "K" : "k",
+    "L" : "l",
+    "M" : "m",
+    "N" : "n",
+    "O" : "o",
+    "P" : "p",
+    "Q" : "q",
+    "R" : "r",
+    "S" : "s",
+    "T" : "t",
+    "U" : "U",
+    "V" : "v",
+    "W" : "w",
+    "X" : "x",
+    "Y" : "y",
+    "Z" : "z",
     ]
     var decryptor = [
         "0" : "a",
@@ -83,6 +110,35 @@ class ViewController: UIViewController {
         "}" : "y",
         "{" : "z",
         ":" : " ",
+        "." : ",",
+    "a" : "A",
+    "b" : "B",
+    "c" : "C",
+    "d" : "D",
+    "e" : "E",
+    "f" : "F",
+    "g" : "G",
+    "h" : "H",
+    "i" : "I",
+    "j" : "J",
+    "k" : "K",
+    "l" : "L",
+    "m" : "M",
+    "n" : "N",
+    "o" : "O",
+    "p" : "P",
+    "q" : "Q",
+    "r" : "R",
+    "s" : "S",
+    "t" : "T",
+    "u" : "U",
+    "v" : "V",
+    "w" : "W",
+    "x" : "X",
+    "y" : "Y",
+    "z" : "Z",
+    
+        
     ]
     
   
@@ -252,18 +308,17 @@ extension ViewController: UITextFieldDelegate {
         for character in encryptedString.characters{
             let characterValue = decryptor["\(character)"]
             textField.text = ""
-            self.encryptedString = ""
             encryptedString += "\(characterValue!)"
-            
         }
         var decryptedTextField = (encryptedString)
+        
         let msg2 = self.generalChannel?.messages.createMessageWithBody(decryptedTextField)
         self.generalChannel?.messages.sendMessage(msg2) { result in
             self.textField.text = ""
+            self.encryptedString = ""
             self.textField.resignFirstResponder()
     }
     self.encryptedString = ""
-    
     }
     }
 
