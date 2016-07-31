@@ -1,24 +1,92 @@
 //
 //  ViewController.swift
 //  IPMQuickstart
-//  Copyright © 2015 Twilio. All rights reserved.
 //
 
 import UIKit
-
+// I had a template show me how to bounce info between the server and the app. Most of the comments are explaining what the functions do
 class ViewController: UIViewController {
   
   var client: TwilioIPMessagingClient? = nil
   var generalChannel: TWMChannel? = nil
   var identity = ""
   var messages: [TWMMessage] = []
+  // Stuff for data transfer and my own encryptor + decryptor
   var data = ""
-  var encryptor = [String : Int]()
-    encryptor = ["a" : 0, "b" : 1, "c" : 2, "d" : 3, "e" : 4, "f" : 5, "g" : 6, "h" : 7, "i" : 8, "j" : 9, "k" : 10, "l" : 11, "m" : 12, "n" : 13, "o" : 14, "p" : 15, "q" : 16, "r" : 17, "s" : 18, "t" : 19, "u" : 20, "v" :21, "w" : 22, "x" : 23, "y" : 24, "z" : 25]
-    var decryptor = [Int : String]()
-    decryptor = [ 0 : "a", 1 : "b" , 2 : "c", 3 : "d", 4 : "e", 5 : "f", 6 : "g", 7 : "h", 8 : "i", 9 : "j", 10 : "k", 11 : "l", 12 : "m", 13 : "n", 14 : "o", 15 : "p", 16 : "q", 17 : "r", 18 : "s", 19 : "t", 20 : "u", 21 : "v", 22 : "w", 23 : "x", 24 : "y", 25 : "z"]
+  var encryptedString = ""
+  var encryptor = [
+        "0" : "0",
+        "1" : "1",
+        "2" : "2",
+        "3" : "3",
+        "4" : "4",
+        "5" : "5",
+        "6" : "6",
+        "7" : "7",
+        "8" : "8",
+        "9" : "9",
+        "!" : "!",
+        "?" : "?",
+        "a" : "0",
+        "b" : "1",
+        "c" : "2",
+        "d" : "3",
+        "e" : "4",
+        "f" : "5",
+        "g" : "6",
+        "h" : "7",
+        "i" : "8",
+        "j" : "9",
+        "k" : "`",
+        "l" : ";",
+        "m" : "@",
+        "n" : "#",
+        "o" : "$",
+        "p" : "%",
+        "q" : "^",
+        "r" : "&",
+        "s" : "*",
+        "t" : "(",
+        "u" : ")",
+        "v" : "_",
+        "w" : "+",
+        "x" : "|",
+        "y" : "}",
+        "z" : "{",
+        " " : ":"
+    ]
+    var decryptor = [
+        "0" : "a",
+        "1" : "b" ,
+        "2" : "c",
+        "3" : "d",
+        "4" : "e",
+        "5" : "f",
+        "6" : "g",
+        "7" : "h",
+        "8" : "i",
+        "9" : "j",
+        "`" : "k",
+        ";" : "l",
+        "@" : "m",
+        "#" : "n",
+        "$" : "o",
+        "%" : "p",
+        "^" : "q",
+        "&" : "r",
+        "*" : "s",
+        "(" : "t",
+        ")" : "u",
+        "_" : "v",
+        "+" : "w",
+        "|" : "x",
+        "}" : "y",
+        "{" : "z",
+        ":" : " ",
+    ]
+    
   
-  // MARK: UI controls
+  // UI controls
 @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var textField: UITextField!
   @IBOutlet weak var tableView: UITableView!
@@ -29,12 +97,11 @@ class ViewController: UIViewController {
     
     nameLabel.text = data + "'s chat"
     
-    // Fetch Access Token form the server and initialize IPM Client - this assumes you are running
-    // the PHP starter app on your local machine, as instructed in the quick start guide
+    // Gets the access token for the server, which I have to run first
     let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
     let urlString = "http://localhost:8000/token.php?device=\(deviceId)"
     
-    // Get JSON from server
+    // Get JSON from server, or Java Script Object Notation, for transmitting data from the web
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
     let session = NSURLSession(configuration: config, delegate: nil, delegateQueue: nil)
     let url = NSURL(string: urlString)
@@ -44,7 +111,7 @@ class ViewController: UIViewController {
     // Make HTTP request
     session.dataTaskWithRequest(request, completionHandler: { data, response, error in
       if (data != nil) {
-        // Parse result JSON
+        // Go through result JSON
         let json = JSON(data: data!)
         let token = json["token"].stringValue
         self.identity = json["identity"].stringValue
@@ -61,7 +128,7 @@ class ViewController: UIViewController {
       }
     }).resume()
     
-    // Listen for keyboard events and animate text field as necessary
+    // Look for keyboard events and animate text field as necessary
     NSNotificationCenter.defaultCenter().addObserver(self,
       selector: #selector(ViewController.keyboardWillShow(_:)),
       name:UIKeyboardWillShowNotification,
@@ -83,7 +150,7 @@ class ViewController: UIViewController {
     self.tableView.separatorStyle = .None
   }
   
-  // MARK: Keyboard Dodging Logic
+  // Keyboard Animation Logic
   
   func keyboardWillShow(notification: NSNotification) {
     let keyboardHeight = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.height
@@ -104,9 +171,9 @@ class ViewController: UIViewController {
     })
   }
   
-  // MARK: UI Logic
+  // More UI Logic
   
-  // Dismiss keyboard if container view is tapped
+  // Dismiss keyboard if view is tapped
   @IBAction func viewTapped(sender: AnyObject) {
     self.textField.resignFirstResponder()
   }
@@ -124,7 +191,7 @@ class ViewController: UIViewController {
 
 }
 
-// MARK: Twilio IP Messaging Delegate
+// Twilio IP Messaging Delegate
 extension ViewController: TwilioIPMessagingClientDelegate {
   func ipMessagingClient(client: TwilioIPMessagingClient!, synchronizationStatusChanged status: TWMClientSynchronizationStatus) {
     if status == .Completed {
@@ -137,7 +204,7 @@ extension ViewController: TwilioIPMessagingClientDelegate {
           print("Channel joined with result \(result)")
         })
       } else {
-        // Create the general channel (for public use) if it hasn't been created yet
+        // Create the general channel if it hasn't been created yet
         client.channelsList().createChannelWithOptions([TWMChannelOptionFriendlyName: "General Chat Channel", TWMChannelOptionType: TWMChannelType.Public.rawValue], completion: { (result, channel) -> Void in
           if result.isSuccessful() {
             self.generalChannel = channel
@@ -165,22 +232,52 @@ extension ViewController: TwilioIPMessagingClientDelegate {
   }
 }
 
-// MARK: UITextField Delegate
+// UITextField Delegate, and my encryption loop
 extension ViewController: UITextFieldDelegate {
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-    let msg = self.generalChannel?.messages.createMessageWithBody(textField.text!)
+    for character in textField.text!.characters{
+       let characterValue = encryptor["\(character)"]
+        encryptedString += "\(characterValue!)"
+    }
+    var encryptedTextField = (encryptedString)
+    let msg = self.generalChannel?.messages.createMessageWithBody(encryptedTextField)
     self.generalChannel?.messages.sendMessage(msg) { result in
-      textField.text = ""
+      
       textField.resignFirstResponder()
+    
     }
     return true
-  }
-}
+    }
+    @IBAction func decodeButton(sender: UIButton) {
+        for character in encryptedString.characters{
+            let characterValue = decryptor["\(character)"]
+            textField.text = ""
+            self.encryptedString = ""
+            encryptedString += "\(characterValue!)"
+            
+        }
+        var decryptedTextField = (encryptedString)
+        let msg2 = self.generalChannel?.messages.createMessageWithBody(decryptedTextField)
+        self.generalChannel?.messages.sendMessage(msg2) { result in
+            self.textField.text = ""
+            self.textField.resignFirstResponder()
+    }
+    self.encryptedString = ""
+    
+    }
+    }
 
-// MARK: UITableView Delegate
+
+  
+   
+
+
+
+
+// UITableView Delegate
 extension ViewController: UITableViewDelegate {
   
-  // Return number of rows in the table
+    // Return number of rows in the table
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.messages.count
   }
@@ -197,9 +294,9 @@ extension ViewController: UITableViewDelegate {
       cell.selectionStyle = .None
       return cell
   }
-}
 
-// MARK: UITableViewDataSource Delegate
+}
+// UITableViewDataSource Delegate
 extension ViewController: UITableViewDataSource {
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
